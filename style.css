@@ -1,14 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&family=Zen+Tokyo+Zoo&display=swap');
 
+:root{
+  --main-color:#64DB64;
+}
+
 body{
   font-family: 'Roboto', sans-serif;
   margin: 0 !important;
   padding: 0 !important;
+  font-size: 20px;
 }
-
 header{
   font-family: 'Zen Tokyo Zoo', cursive;
   text-align: center;
   font-size: 100px;
-  background-color: #64DB64;
+  background-color: var(--main-color);
+}
+#choice-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.choice{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+input, label{
+  display: block;
+}
+label{
+  margin-bottom: 5px;
+}
+input, select{
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+input:focus, select:focus{
+  border-color: var(--main-color);
+}
+input{
+  width: 20vw;
+  height: 30px;
+  font-size: 16px;
+}
+select{
+  height: 30px;
+  width: 20vw;
+  font-size: 16px;
 }
