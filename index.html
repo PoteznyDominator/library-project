@@ -11,28 +11,51 @@
     <p>Library Project</p>
   </header>
   <main>
-    <div id="choice-container">
-      <div class="choice">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title">
-      </div>
-      <div class="choice">
-        <label for="author">Author</label>
-        <input type="text" name="author" id="author">
-      </div>
-      <div class="choice">
-        <label for="pages">Pages</label>
-        <input type="text" name="pages" id="pages">
-      </div>
-      <div class="choice">
-        <label for="status">Status</label>
-        <select name="status" id="status">
-          <option value="">Choose an option</option>
-          <option value="read">Read</option>
-          <option value="notRead">Not Read</option>
-        </select>
-      </div>
-    </div>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <th>
+          <input type="text" name="title" id="title">
+        </th>
+        <th>
+          <input type="text" name="author" id="author">
+        </th>
+        <th>
+          <input type="text" name="pages" id="pages">
+        </th>
+        <th>
+          <select name="status" id="status">
+            <option value="">Choose an option</option>
+            <option value="read">Read</option>
+            <option value="notRead">Not Read</option>
+          </select>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <button id="submit">Submit</button>
+        </td>
+      </tr>
+      <tr class="library-table">
+        <th>Name</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+      <tr class="border">
+        <td>krzyzaczy</td>
+        <td>sienkiewicz</td>
+        <td>1000</td>
+        <td>read</td>
+        <td><button class="delete">delete</button></td>
+      </tr>
+    </table>
   </main>
   <script src="script.js"></script>
 </body>

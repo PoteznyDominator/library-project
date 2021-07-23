@@ -16,20 +16,9 @@ header{
   font-size: 100px;
   background-color: var(--main-color);
 }
-#choice-container{
+main{
   display: flex;
-  flex-direction: row;
   justify-content: center;
-}
-.choice{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-input, label{
-  display: block;
-}
-label{
-  margin-bottom: 5px;
 }
 input, select{
   outline: none;
@@ -40,12 +29,52 @@ input:focus, select:focus{
   border-color: var(--main-color);
 }
 input{
-  width: 20vw;
+  width: 15vw;
   height: 30px;
   font-size: 16px;
 }
 select{
   height: 30px;
-  width: 20vw;
+  width: 15vw;
   font-size: 16px;
+}
+button{
+  position: relative;
+  background-color:var(--main-color);
+	border-radius:10px;
+	border:1px solid #18ab29;
+	display:inline-block;
+  font-family: 'Roboto', sans-serif;
+	cursor:pointer;
+	color:black;
+	font-size:17px;
+	padding:7px 10px;
+	text-decoration:none;
+}
+button:hover {
+	background-color:#5AC55A;
+}
+button:active {
+	position:relative;
+	top:2px;
+}
+.delete{
+  background-color: #ff1f1f;
+  border: 1px solid #a30000;
+}
+.delete:hover {
+	background-color:#e00000;
+}
+table{
+  border-collapse: collapse;
+}
+th, td{
+  text-align: left;
+  padding: 10px 2vw 10px 2vw;
+}
+tr.border{
+  border-bottom: 1px solid black;
+}
+tr.library-table th{
+  padding-top: 40px;
 }
