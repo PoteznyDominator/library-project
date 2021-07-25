@@ -11,7 +11,7 @@
     <p>Library Project</p>
   </header>
   <main>
-    <table>
+    <table class="main">
       <tr>
         <th>Title</th>
         <th>Author</th>
@@ -20,17 +20,16 @@
       </tr>
       <tr>
         <th>
-          <input type="text" name="title" id="title">
+          <input type="text" name="title" id="title" class="input">
         </th>
         <th>
-          <input type="text" name="author" id="author">
+          <input type="text" name="author" id="author" class="input">
         </th>
         <th>
-          <input type="text" name="pages" id="pages">
+          <input type="text" name="pages" id="pages" class="input">
         </th>
         <th>
           <select name="status" id="status">
-            <option value="">Choose an option</option>
             <option value="read">Read</option>
             <option value="notRead">Not Read</option>
           </select>
@@ -38,7 +37,7 @@
       </tr>
       <tr>
         <td>
-          <button id="submit">Submit</button>
+          <button class="submit">Submit</button>
         </td>
       </tr>
       <tr class="library-table">
@@ -48,12 +47,12 @@
         <th>Status</th>
         <th></th>
       </tr>
-      <tr class="border">
+      <tr class="border krzyzaczy">
         <td>krzyzaczy</td>
         <td>sienkiewicz</td>
         <td>1000</td>
         <td>read</td>
-        <td><button class="delete">delete</button></td>
+        <td><button class="delete" id="Krzyzaczy">delete</button></td>
       </tr>
     </table>
   </main>
