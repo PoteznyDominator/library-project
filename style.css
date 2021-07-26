@@ -35,7 +35,7 @@ input{
 }
 select{
   height: 30px;
-  width: 15vw;
+  width: 120px;
   font-size: 16px;
 }
 button{
@@ -78,4 +78,15 @@ tr.border{
 }
 tr.library-table th{
   padding-top: 40px;
+}
+.statusBtn{
+  text-transform: capitalize;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  color: #169b26;
+}
+.statusBtn:hover{
+  background-color: transparent;
 }
