@@ -9,15 +9,6 @@ function book(title, author, pages, read){
   this.read = read;  
 }
 
-
-book.prototype.info = function(){
-  if(this.read){
-    return `The ${this.title} by ${this.author}, ${this.pages} pages, have been read.`;
-  }
-  else{
-    return `The ${this.title} by ${this.author}, ${this.pages} pages, not read yet.`;
-  }
-}
 book.prototype.createNew = function(){
   //createing a section of new added book
   const book =`<tr class="border ${this.title}" >
@@ -33,6 +24,7 @@ book.prototype.createNew = function(){
   this.deleteBtn();
   this.statusBtn();
   bookArray.push(this.title.toLowerCase());
+  localStorage.setItem(this.title, JSON.stringify(this));
 }
 book.prototype.deleteBtn = function(){
   const deleteBtn = document.querySelector(`#${this.title}`);
@@ -40,6 +32,7 @@ book.prototype.deleteBtn = function(){
       if(confirm("Are you sure you want to delete this?")){
         const removeNode = document.querySelector(`.${this.title}`);
         removeNode.remove();
+        localStorage.removeItem(this.title);
         bookArray.pop(this.title.toLowerCase());
       }
     });
@@ -52,16 +45,17 @@ book.prototype.statusBtn = function(){
     statusBtn.style.color = "#e00000";
   }
   statusBtn.addEventListener('click', ()=>{
-    if(this.read === "Read"){
+    if(this.read === "read"){
       statusBtn.style.color = "#e00000";
-      this.read = "NotRead"
+      this.read = "notRead"
       statusBtn.innerHTML = "Not Read"
     }
     else{
       statusBtn.style.color = "#169b26";
-      this.read = "Read"
+      this.read = "read"
       statusBtn.innerHTML = "Read"
     }
+    localStorage.setItem(this.title, JSON.stringify(this));
   });
 }
 
@@ -93,11 +87,24 @@ submitBtn.addEventListener('click', ()=>{
   }
 });
 
-const exitedBooks = document.querySelectorAll(".border");
-exitedBooks.forEach(element => {
-  e = element.childNodes;
-  let newbook = new book(e[1].outerText, e[3].outerText, e[5].outerText, e[7].outerText);
-  newbook.deleteBtn();
-  newbook.statusBtn();
-  bookArray.push(e[1].outerText.toLowerCase());
+// const exitedBooks = document.querySelectorAll(".border");
+// exitedBooks.forEach(element => {
+//   e = element.childNodes;
+//   let newbook = new book(e[1].outerText, e[3].outerText, e[5].outerText, e[7].outerText);
+//   newbook.deleteBtn();
+//   newbook.statusBtn();
+//   bookArray.push(e[1].outerText.toLowerCase());
+//   localStorage.setItem("object", JSON.stringify(newbook));
+// });
+
+// tata =JSON.parse(localStorage.getItem("object"));
+// newboo = new book(tata.title, tata.author, tata.value, tata.read);
+// newboo.createNew();
+
+window.addEventListener('load',()=>{
+  for(let i = 0; i < localStorage.length; i++){
+    element = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    newbook = new book(element.title, element.author, element.pages, element.read);
+    newbook.createNew();
+  } 
 });

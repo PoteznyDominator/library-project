@@ -85,7 +85,8 @@ tr.library-table th{
   border: none;
   outline: none;
   font-weight: 600;
-  color: #169b26;
+  color: #169b26; 
+  padding: 0;
 }
 .statusBtn:hover{
   background-color: transparent;
