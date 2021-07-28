@@ -87,20 +87,7 @@ submitBtn.addEventListener('click', ()=>{
   }
 });
 
-// const exitedBooks = document.querySelectorAll(".border");
-// exitedBooks.forEach(element => {
-//   e = element.childNodes;
-//   let newbook = new book(e[1].outerText, e[3].outerText, e[5].outerText, e[7].outerText);
-//   newbook.deleteBtn();
-//   newbook.statusBtn();
-//   bookArray.push(e[1].outerText.toLowerCase());
-//   localStorage.setItem("object", JSON.stringify(newbook));
-// });
-
-// tata =JSON.parse(localStorage.getItem("object"));
-// newboo = new book(tata.title, tata.author, tata.value, tata.read);
-// newboo.createNew();
-
+//showing local storage
 window.addEventListener('load',()=>{
   for(let i = 0; i < localStorage.length; i++){
     element = JSON.parse(localStorage.getItem(localStorage.key(i)));
